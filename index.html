@@ -92,7 +92,7 @@ button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}a{
 .cart-line strong{font-size:14.5px;display:block;line-height:1.3}.cart-line small{color:var(--muted);font-size:13px}.cart-line .lt{font-weight:800;font-size:14.5px;text-align:right}
 .qty{display:flex;align-items:center;margin-top:8px;border:1px solid var(--line);border-radius:6px;width:max-content}.qty button{border:0;background:none;width:32px;height:32px;font-size:17px}.qty span{min-width:28px;text-align:center;font-weight:700;font-size:14px}.rm{border:0;background:none;color:var(--muted);font-size:12.5px;text-decoration:underline;padding:6px 0 0;display:block}
 .cart-foot{border-top:1px solid var(--line);padding:16px 22px calc(16px + env(safe-area-inset-bottom));background:#fff;max-height:62vh;overflow:auto}
-.totalrow{display:flex;justify-content:space-between;font-weight:800;font-size:17px;margin-bottom:6px}.cart-note{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.sumrow{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:4px}.field select.bad{border-color:#c0392b}.totalrow{display:flex;justify-content:space-between;font-weight:800;font-size:17px;margin-bottom:6px}.cart-note{font-size:12.5px;color:var(--muted);margin-bottom:12px}
 .checkout-form{display:grid;gap:10px}.field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:4px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid #d9cfc3;border-radius:8px;font-size:15px;background:#fff}.field textarea{min-height:60px;resize:vertical}.field input.bad{border-color:#c0392b}.err{color:#c0392b;font-size:12.5px;margin-top:3px;display:none}.field.has-err .err{display:block}
 .empty{text-align:center;color:var(--muted);padding:50px 10px}.empty .big{font-size:40px;margin-bottom:10px}.empty strong{color:var(--ink);font-size:17px}.empty p{margin:6px 0 18px}
 .done{text-align:center;padding:30px 22px}.done .tick{width:60px;height:60px;border-radius:50%;background:#e6f5ec;color:var(--green);display:grid;place-items:center;font-size:30px;margin:0 auto 14px}.done h3{font:700 22px Georgia,serif;margin:0 0 8px}.done p{color:var(--muted);margin:0 0 16px}.done .btn{margin-bottom:10px}
@@ -122,7 +122,7 @@ body{padding-bottom:68px;font-size:15px}.topbar{padding:8px 4%;font-size:12px}.t
 .header{height:64px;padding:0 4%;gap:8px}.brandmark{width:30px;height:32px}.brandname{font-size:19px}.brandtag{font-size:7.5px}.menu-toggle{display:grid}.actions .callbtn{display:none}
 .nav{display:none;position:absolute;top:63px;left:0;right:0;background:#fff;padding:10px 5% 18px;box-shadow:0 10px 20px #0001;flex-direction:column;align-items:stretch;gap:0;font-size:15px}.nav.open{display:flex}.nav a{padding:13px 0;border-bottom:1px solid #f1ede7}
 .searchbar{padding:10px 4%}
-.hero{height:400px}.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,238,231,.97) 0,rgba(243,238,231,.88) 58%,rgba(243,238,231,.15) 100%)}.hero-copy{z-index:2}.hero-arrows,.dots{z-index:3}.slide-img{width:86%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40%);mask-image:linear-gradient(90deg,transparent 0,#000 40%)}.hero-copy{max-width:74%;padding:26px 0 48px 5%}.eyebrow{font-size:10px;letter-spacing:.16em}.hero h1{font-size:clamp(29px,8.6vw,40px);letter-spacing:-1px;margin-bottom:10px}.hero-copy p{font-size:13.5px;max-width:92%;margin-bottom:16px}.hero .btn{padding:11px 13px;font-size:12.5px}.hero-arrows{right:10px;top:12px;gap:7px}.circlebtn{width:32px;height:32px;font-size:18px}.dots{left:5%;bottom:16px}
+.hero{height:300px}.slide-img{width:62%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28%);mask-image:linear-gradient(90deg,transparent 0,#000 28%)}.hero-copy{max-width:58%;padding:18px 0 40px 5%}.eyebrow{font-size:8.5px;letter-spacing:.14em;margin-bottom:6px}.hero h1{font-size:clamp(22px,6.6vw,30px);letter-spacing:-.8px;margin-bottom:8px}.hero-copy p{font-size:11.5px;line-height:1.45;max-width:100%;margin-bottom:12px}.hero .btnrow{gap:6px}.hero .btn{padding:9px 10px;font-size:10.5px;border-radius:6px}.hero-arrows{right:8px;top:48%;gap:6px}.circlebtn{width:28px;height:28px;font-size:16px}.dots{left:5%;bottom:14px}.dot{width:14px;height:5px}.dot.active{width:24px}
 .benefits{grid-template-columns:repeat(2,1fr);padding:16px 4%;gap:16px 8px}.benefit{justify-content:flex-start}.benefit strong{font-size:13px}.benefit small{font-size:12px}
 .section{padding:30px 4% 6px}.section h2{font-size:24px}.categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category img{height:120px}.category span{padding:10px 12px;font-size:13.5px}
 .chips{margin:0 -4%;padding-left:4%;padding-right:4%;flex-basis:100%}.sort{width:100%;justify-content:space-between}
@@ -265,6 +265,10 @@ const products=[
 {id:18,name:"Sculpted Wood Z Side Table",cat:"Decor",sub:"Side table",price:18900,img:"z-side-table",fit:"cover",pos:"center 68%",desc:"A one-of-a-kind side table with a sculpted, flowing Z shape in warm natural wood. Works as art as much as furniture.",feats:["Sculpted solid-wood look","Perfect beside a sofa or armchair","Natural wood grain makes each piece unique"]},
 {id:19,name:"Burgundy Marble-Top Side Table",cat:"Decor",sub:"Side table",price:21900,img:"marble-side-table",fit:"cover",pos:"center 84%",desc:"A bold round side table with a marble-effect top and glossy burgundy base. Adds a pop of colour to a lounge or bedroom.",feats:["Marble-effect round top","Glossy burgundy finish","Sold individually; ask about matching pairs"]}
 ];
+/* DELIVERY FEES (KSh): median of local Mombasa mover/transport asking prices on Jiji.co.ke (Oct 2026) for listings covering each area.
+   Areas with fewer than 2 listings use the overall local median (13,500). Edit freely, these are estimates, not quotes. */
+const DELIVERY=[{a:"Nyali",f:12000},{a:"Tudor",f:12000},{a:"Mombasa Island",f:13500},{a:"Kongowea",f:13500},{a:"Likoni",f:13500},{a:"Mikindani",f:13500},{a:"Mtwapa",f:13500},{a:"Diani",f:13500},{a:"Bamburi",f:14000},{a:"Kisauni",f:16000},{a:"Changamwe",f:19000}];
+const feeOf=a=>{const d=DELIVERY.find(x=>x.a===a);return d?d.f:null};
 const $=id=>document.getElementById(id);
 const money=n=>"KSh "+Number(n).toLocaleString("en-KE");
 const imgSrc=p=>`images/${p.img}.webp`;
@@ -330,16 +334,21 @@ function renderCart(){
  if(!es.length){box.innerHTML=`<div class="empty"><div class="big">🛋️</div><strong>Your cart is empty</strong><p>Add furniture you love, then send your order to us on WhatsApp.</p><button class="btn" id="continueShopping">Explore products</button></div>`;return}
  const c=store.get("jf_cust",{});
  box.innerHTML=`<div class="cart-body">${es.map(({p,q})=>`<div class="cart-line"><a class="ci ${p.fit}" href="#/product/${p.id}" data-closecart><img src="${imgSrc(p)}" alt="" style="${p.pos?`object-position:${p.pos}`:""}"></a><div><strong>${esc(p.name)}</strong><small>${money(p.price)} each</small><div class="qty"><button data-qty="${p.id}" data-d="-1" aria-label="Decrease quantity of ${esc(p.name)}">−</button><span>${q}</span><button data-qty="${p.id}" data-d="1" aria-label="Increase quantity of ${esc(p.name)}">+</button></div><button class="rm" data-rm="${p.id}">Remove</button></div><div class="lt">${money(p.price*q)}</div></div>`).join("")}</div>
- <div class="cart-foot"><div class="totalrow"><span>Estimated subtotal</span><span>${money(cartTotal())}</span></div><div class="cart-note">Delivery is quoted separately. Final prices and availability are confirmed by Jolly Furnitures before you pay.</div>
+ <div class="cart-foot"><div class="sumrow"><span>Subtotal</span><span>${money(cartTotal())}</span></div><div class="sumrow"><span>Delivery</span><span id="sumDel"></span></div><div class="totalrow"><span>Estimated total</span><span id="sumTot"></span></div><div class="cart-note">Delivery fees are estimates by area. Jolly Furnitures confirms the final price, availability and delivery charge before you pay.</div>
  <form id="checkoutForm" class="checkout-form" novalidate>
  <div class="field"><label for="cName">Full name</label><input id="cName" value="${esc(c.name||"")}" autocomplete="name" required><div class="err">Please enter your name.</div></div>
  <div class="field"><label for="cPhone">Phone number</label><input id="cPhone" type="tel" inputmode="tel" value="${esc(c.phone||"")}" autocomplete="tel" placeholder="e.g. 0712 345 678" required><div class="err">Please enter a valid phone number.</div></div>
  <div class="field"><label for="cMethod">How would you like to receive it?</label><select id="cMethod"><option value="Delivery"${c.method!=="Pickup"?" selected":""}>Deliver to me</option><option value="Pickup"${c.method==="Pickup"?" selected":""}>I will pick up from the shop</option></select></div>
- <div class="field" id="locField"><label for="cLoc">Delivery area / address</label><input id="cLoc" list="areas" value="${esc(c.loc||"")}" placeholder="e.g. Nyali, Bamburi, Likoni…" autocomplete="street-address"><datalist id="areas"><option>Kongowea</option><option>Nyali</option><option>Bamburi</option><option>Mtwapa</option><option>Kisauni</option><option>Tudor</option><option>Mombasa Island</option><option>Likoni</option><option>Changamwe</option><option>Mikindani</option><option>Diani</option></datalist><div class="err">Please tell us where to deliver.</div></div>
+ <div class="field" id="locField"><label for="cLoc">Delivery area</label><select id="cLoc"><option value="">Choose your area…</option>${DELIVERY.map(d=>`<option value="${d.a}"${c.loc===d.a?" selected":""}>${d.a} — ${money(d.f)}</option>`).join("")}<option value="Other"${c.loc==="Other"?" selected":""}>Other area — we will quote you</option></select><div class="err">Please choose a delivery area.</div></div>
+ <div class="field" id="addrField"><label for="cAddr">Street / landmark (optional)</label><input id="cAddr" value="${esc(c.addr||"")}" autocomplete="street-address" placeholder="e.g. near Kongowea Market"></div>
  <div class="field"><label for="cNote">Notes (optional)</label><textarea id="cNote" placeholder="Colour, size, preferred delivery day…"></textarea></div>
  <button class="btn wa full" type="submit">Send order on WhatsApp&nbsp;→</button></form></div>`;
  toggleLoc()}
-function toggleLoc(){const m=$("cMethod"),f=$("locField");if(m&&f)f.classList.toggle("is-hidden",m.value==="Pickup")}
+function deliveryFee(){const m=$("cMethod");if(!m||m.value==="Pickup")return 0;return feeOf($("cLoc").value)}
+function updateTotals(){const m=$("cMethod");if(!m)return;const pick=m.value==="Pickup",loc=$("cLoc").value,fee=deliveryFee(),sub=cartTotal();
+ $("sumDel").textContent=pick?"Free (pickup)":fee!=null?money(fee):loc==="Other"?"We will quote you":"Choose area";
+ $("sumTot").textContent=fee!=null?money(sub+fee):money(sub)+(pick?"":" + delivery")}
+function toggleLoc(){const m=$("cMethod");if(!m)return;const pick=m.value==="Pickup";$("locField").classList.toggle("is-hidden",pick);$("addrField").classList.toggle("is-hidden",pick);updateTotals()}
 function showCart(){lastFocus=document.activeElement;$("toast").classList.remove("show");doneState=null;renderCart();$("cartOverlay").classList.add("open");document.body.style.overflow="hidden";$("cartClose").focus()}
 function hideCart(){$("cartOverlay").classList.remove("open");document.body.style.overflow="";doneState=null;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 $("cartContent").addEventListener("click",e=>{
@@ -348,18 +357,20 @@ $("cartContent").addEventListener("click",e=>{
  if(e.target.id==="newOrder"){cart={};saveCart();doneState=null;renderCart();return}
  const q=e.target.closest("[data-qty]");if(q){const id=q.dataset.qty;cart[id]=Math.min(20,(cart[id]||0)+(+q.dataset.d));if(cart[id]<=0)delete cart[id];saveCart();renderCart();return}
  const r=e.target.closest("[data-rm]");if(r){delete cart[r.dataset.rm];saveCart();renderCart()}});
-$("cartContent").addEventListener("change",e=>{if(e.target.id==="cMethod")toggleLoc()});
+$("cartContent").addEventListener("input",e=>{const f=e.target.closest(".field");if(f){f.classList.remove("has-err");e.target.classList&&e.target.classList.remove("bad")}});
+$("cartContent").addEventListener("change",e=>{if(e.target.id==="cMethod")toggleLoc();else if(e.target.id==="cLoc"){updateTotals();const f=e.target.closest(".field");f.classList.remove("has-err");e.target.classList.remove("bad")}});
 $("cartContent").addEventListener("submit",e=>{
  if(e.target.id!=="checkoutForm")return;e.preventDefault();
  const es=cartEntries();if(!es.length)return;
- const name=$("cName").value.trim(),phone=$("cPhone").value.trim(),method=$("cMethod").value,loc=$("cLoc").value.trim(),note=$("cNote").value.trim();
+ const name=$("cName").value.trim(),phone=$("cPhone").value.trim(),method=$("cMethod").value,loc=$("cLoc").value,addr=($("cAddr")||{value:""}).value.trim(),note=$("cNote").value.trim();
  const digits=phone.replace(/\D/g,"");let ok=true;
  const mark=(id,bad)=>{const f=$(id).closest(".field");f.classList.toggle("has-err",bad);$(id).classList.toggle("bad",bad);if(bad)ok=false};
- mark("cName",name.length<2);mark("cPhone",digits.length<9||digits.length>13);mark("cLoc",method==="Delivery"&&loc.length<2);
- if(!ok){const bad=document.querySelector("#checkoutForm .has-err input");bad&&bad.focus();return}
- store.set("jf_cust",{name,phone,method,loc});
+ mark("cName",name.length<2);mark("cPhone",digits.length<9||digits.length>13);mark("cLoc",method==="Delivery"&&!loc);
+ if(!ok){const bad=document.querySelector("#checkoutForm .has-err input,#checkoutForm .has-err select");bad&&bad.focus();return}
+ store.set("jf_cust",{name,phone,method,loc,addr});
+ const fee=method==="Pickup"?0:feeOf(loc),sub=cartTotal();
  const lines=es.map(({p,q},i)=>`${i+1}. ${p.name}\n   Qty: ${q} × ${money(p.price)} = ${money(p.price*q)}${pageLink(p)?"\n   "+pageLink(p):""}`);
- const msg=`JOLLY FURNITURES — NEW ORDER\n\nCustomer: ${name}\nPhone: ${phone}\n${method==="Pickup"?"Collection: I will pick up from the shop":"Delivery area: "+loc}\n\nORDER ITEMS\n${lines.join("\n")}\n\nEstimated subtotal: ${money(cartTotal())}\nDelivery charge: to be confirmed\n\nNotes: ${note||"None"}\n\nPlease confirm availability, final price and ${method==="Pickup"?"pickup time":"delivery arrangements"}. Thank you.`;
+ const msg=`JOLLY FURNITURES — NEW ORDER\n\nCustomer: ${name}\nPhone: ${phone}\n${method==="Pickup"?"Collection: I will pick up from the shop":"Delivery area: "+(loc==="Other"?"Other (please quote)":loc)+(addr?"\nAddress / landmark: "+addr:"")}\n\nORDER ITEMS\n${lines.join("\n")}\n\nSubtotal: ${money(sub)}\nDelivery: ${method==="Pickup"?"Free (pickup)":fee!=null?money(fee)+" (estimate)":"to be quoted"}\nEstimated total: ${fee!=null?money(sub+fee):money(sub)+" + delivery"}\n\nNotes: ${note||"None"}\n\nPlease confirm availability, final price and ${method==="Pickup"?"pickup time":"delivery arrangements"}. Thank you.`;
  doneState=waUrl(msg);window.open(doneState,"_blank","noopener");renderCart()});
 
 /* ---------- product page ---------- */
@@ -372,7 +383,7 @@ function renderProductView(p){
  pv.innerHTML=`<div class="pv"><nav class="crumbs" aria-label="Breadcrumb"><a href="#">Home</a>›<a href="#products" data-filter="${p.cat}">${CAT_LABEL[p.cat]||p.cat}</a>›<b>${esc(p.name)}</b></nav>
  <div class="pv-main"><div class="pv-img ${p.fit}" id="pvImg" role="button" tabindex="0" aria-label="Enlarge image of ${esc(p.name)}"><img src="${imgSrc(p)}" alt="${esc(p.name)}" style="${p.pos?`object-position:${p.pos}`:""}"><span class="zoomhint">Tap to enlarge</span></div>
  <div class="pv-info"><p class="eyebrow">${esc(p.sub)}</p><h1>${esc(p.name)}</h1>
- <div class="pv-price">${priceHTML(p)}</div><p class="section-sub" style="margin:0">Delivery quoted separately</p>
+ <div class="pv-price">${priceHTML(p)}</div><p class="section-sub" style="margin:0">Delivery fee shown at checkout by area</p>
  <p class="pv-desc">${esc(p.desc)}</p>
  <ul class="pv-list">${p.feats.map(f=>`<li>${esc(f)}</li>`).join("")}<li>Available at Jolly Furnitures, Kongowea, Mombasa</li></ul>
  ${buy}

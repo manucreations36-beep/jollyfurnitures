@@ -17,3 +17,6 @@ All products are in the `products` array near the bottom of `index.html`.
 ## Notes
 - No database, payment or admin yet. Orders are composed in WhatsApp for the customer to send.
 - Product descriptions are written from the photos. Confirm materials and sizes and edit as needed.
+
+## Delivery fees
+The cart has a delivery-area menu with a fee per area (see `DELIVERY` in `index.html`). Fees are the **median** of local Mombasa mover/transport asking prices on Jiji.co.ke (Oct 2026). Nyali and Tudor KSh 12,000; Mombasa Island KSh 13,500; Bamburi KSh 14,000; Kisauni KSh 16,000; Changamwe KSh 19,000. Areas with too few listings (Kongowea, Likoni, Mikindani, Mtwapa, Diani) use the overall local median, KSh 13,500. These are house-moving prices, so adjust them to what you actually charge to deliver furniture.
